@@ -1,3 +1,4 @@
+import java.awt.Rectangle;
 
 /**
  * The ClockDisplay class implements a digital clock display for a
@@ -16,8 +17,8 @@ public class ClockDisplay
 {
     private NumberDisplay hours;
     private NumberDisplay minutes;
-    private String displayString;    // simulates the actual display
-    
+    private String displayString;    // simulates the actual display     private Rectangle window; window = new Rectangle 
+    private Rectangle window;
     /**
      * Constructor for ClockDisplay objects. This constructor 
      * creates a new clock set at 00:00.
@@ -26,6 +27,7 @@ public class ClockDisplay
     {
         hours = new NumberDisplay(24);
         minutes = new NumberDisplay(60);
+        window = new Rectangle (200,100);
         updateDisplay();
     }
 
@@ -39,6 +41,8 @@ public class ClockDisplay
         hours = new NumberDisplay(24);
         minutes = new NumberDisplay(60);
         setTime(hour, minute);
+        window = new Rectangle (200,100);
+        
     }
 
     /**
@@ -81,4 +85,7 @@ public class ClockDisplay
         displayString = hours.getDisplayValue() + ":" + 
                         minutes.getDisplayValue();
     }
-}
+
+     }
+  
+
